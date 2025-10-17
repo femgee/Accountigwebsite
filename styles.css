@@ -949,8 +949,6 @@ footer {
         margin-right: auto; /* Push logo to left */
     }
 }
-
-
     nav ul {
         position: fixed;
         top: 70px;
@@ -1001,5 +999,79 @@ footer {
 
     .testimonial-card {
         padding: 1.5rem;
+    }
+}
+
+ 
+/* Go to Top Button - Fixed */
+.go-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 9999; /* Higher z-index to ensure it's on top */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+}
+
+.go-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.go-to-top:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.go-to-top:active {
+    transform: translateY(-1px);
+}
+
+/* Ensure no other elements are interfering */
+* {
+    box-sizing: border-box;
+}
+
+/* Make sure body has proper positioning */
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+/* Responsive styles for Go to Top button */
+@media (max-width: 768px) {
+    .go-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .go-to-top {
+        bottom: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
     }
 }
