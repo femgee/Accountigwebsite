@@ -343,3 +343,58 @@ document.addEventListener('DOMContentLoaded', function() {
     initTestimonialsCarousel();
 });
 
+// Go to Top functionality - Fixed
+function initGoToTop() {
+    const goToTopButton = document.getElementById('goToTop');
+    
+    if (!goToTopButton) {
+        console.error('Go to Top button not found!');
+        return;
+    }
+    
+    // Show/hide button based on scroll position
+    function toggleGoToTopButton() {
+        const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollPosition > 300) {
+            goToTopButton.classList.add('visible');
+        } else {
+            goToTopButton.classList.remove('visible');
+        }
+    }
+    
+    // Smooth scroll to top
+    function scrollToTop() {
+        try {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        } catch (error) {
+            // Fallback for older browsers
+            document.documentElement.scrollTop = 0;
+        }
+    }
+    
+    // Event listeners
+    window.addEventListener('scroll', toggleGoToTopButton);
+    goToTopButton.addEventListener('click', scrollToTop);
+    
+    // Keyboard accessibility
+    goToTopButton.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            scrollToTop();
+        }
+    });
+    
+    // Initialize button state
+    toggleGoToTopButton();
+    
+    console.log('Go to Top button initialized successfully');
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initGoToTop();
+});
