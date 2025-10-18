@@ -842,6 +842,40 @@ textarea.form-control {
     resize: vertical;
 }
 
+/* ===== LOCATION SECTION STYLES ===== */
+/* Add this to your existing styles.css file */
+
+#contact .location-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+#contact .map-placeholder {
+    position: relative;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    overflow: hidden;
+    height: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    min-height: 400px;
+}
+
+#contact .map-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    background: #2c3e50;
+    display: block;
+}
+
+/* ... (include all the other location CSS styles from previous answer) ... */
+
+
 /* Footer */
 footer {
     background-color: var(--primary-color);
