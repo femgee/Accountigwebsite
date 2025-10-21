@@ -37,6 +37,10 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 15px;
 }
 
+.text-wrap {
+    white-space: normal;
+}
+
 /* Header & Navigation */
 header {
     background-color: rgba(255, 255, 255, 0.95);
@@ -106,7 +110,7 @@ nav ul li a:hover::after {
     display: none;
     font-size: 1.5rem;
     cursor: pointer;
-    padding-left: 50%;
+    padding-left: 45%;
 }
 
 /* Hero Section with Video Background */
@@ -231,7 +235,7 @@ nav ul li a:hover::after {
     flex: 1;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    
 }
 
 .about-image img {
@@ -239,10 +243,6 @@ nav ul li a:hover::after {
     height: auto;
     display: block;
     transition: transform 0.5s;
-}
-
-.about-image:hover img {
-    transform: scale(1.05);
 }
 
 /* Services Section with Video Background */
